@@ -1,0 +1,114 @@
+/*---------------------------------
+General
+---------------------------------*/
+:root{
+	--fs-sm: clamp(0.8rem, 0.15vi + 0.76rem, 1.13rem);
+	--fs-base: clamp(1rem, 0.23vi + 0.94rem, 1.5rem);
+	--fs-md: clamp(1.25rem, 0.35vi + 1.16rem, 2rem);
+	--fs-lg: clamp(1.56rem, 0.51vi + 1.43rem, 2.67rem);
+	--fs-xl: clamp(1.95rem, 0.74vi + 1.77rem, 3.55rem);
+	--fs-xxl: clamp(2.44rem, 1.07vi + 2.17rem, 4.74rem);
+	--fs-xxxl: clamp(3.05rem, 1.52vi + 2.67rem, 6.31rem);
+
+	--color-1: #131C25;
+	--color-2: #28436A;
+	--color-3: #852C87;
+	--color-4: #ED7004;
+	--color-5: #FCC000;
+	--color-6: #9A1921;
+
+	--black: #161815;
+    --white: #fcfcfc;
+
+	--gradient-1: linear-gradient(0deg, var(--color-5) ,var(--color-4))
+}
+
+*, *::before, *::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Source Sans 3", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	background-color: var(--color-1);
+	color: var(--white)
+}
+img, video{
+	display: block;
+}
+
+h1{
+	margin-block-end: 1rem;
+}
+
+/*---------------------------------
+Helpers
+---------------------------------*/
+
+
+/*---------------------------------
+Button
+---------------------------------*/
+.button { background: transparent; outline: none; border: 3px solid var(--white); color: var(--white); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; padding: 1rem; font-size: var(--fs-base); mix-blend-mode: difference; position: relative; border-radius: 0.25rem; cursor: pointer; }
+.button::before { content: ''; position: absolute; top: 0; left: 0; background: var(--color-1); width: 40%; height: 100%; z-index: -1; transition: 0.4s; animation: button_animation 3s infinite ease-in-out; }
+.button::after { content: '>>'; margin-left: 1ch; }
+
+.button:hover::before { width: 100%; animation: none; transition: 0.4s; animation: button_animation_full 0.8s  ease-in-out; }
+
+@keyframes button_animation {
+	0%, 20%, 100% { width: 40%; }
+	30% { width: 50% }
+	40% { width: 40% }
+	75% { width: 40% }
+	85% { width: 60% }
+ }
+
+@keyframes button_animation_full {
+	from { width: 0%; }
+	to { width: 100%; }
+ }
+
+
+
+/*---------------------------------
+Header
+---------------------------------*/
+.header { position: relative; min-height: 100vh; border: 1px solid red; }
+
+.header__media { position: absolute; top: 0; right: 0; border: 1px  solid red; height: 100%; aspect-ratio: 9/16; }
+.header__media video { width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+
+.header__gradient { position: absolute; top: 0; right: 0; height: 100%; width: 70%; background: var(--gradient-1); border: 1px solid red; z-index: -2; ; }
+
+.header__text { width: 86%; z-index: 10; text-wrap:balance; border: 1px solid red; text-align: right; position: absolute; top: 50%; right: 30%; transform: translate(-0%, -50%); }
+.header__text h1 { font-size: var(--fs-xxl); font-weight: 400; }
+.header__text h1 span { color: var(--color-1); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; }
+.header__text h1 strong { font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; }
+
+@media (max-width: 1024px) {
+	.header { display: grid; place-items: center; min-height: 70vh; }
+	.header__media { height: 100%; width: 50%; }
+	.header__text { position: static; transform: unset; }
+	.header__gradient { width: 93%; }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
