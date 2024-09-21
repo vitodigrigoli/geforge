@@ -20,12 +20,16 @@ General
 	--black: #161815;
     --white: #fcfcfc;
 
+	--white-10: #fcfcfc1a;
+
 	--gradient-1: linear-gradient(0deg, var(--color-5) ,var(--color-4));
 
 	--container-size: 86%;
 	--container-half-size: calc( (100% - var(--container-size) ) / 2 );
 
 	--border--radius: 0.25rem;
+
+	--space-1: 128px
 }
 
 *, *::before, *::after{
@@ -48,6 +52,18 @@ img, video{
 
 h1{
 	margin-block-end: 1rem;
+}
+
+p{
+	margin-block-end: 1rem;
+	font-size: var(--fs-md);
+	line-height: 1.8;
+}
+
+.container{
+	width: var(	--container-size);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*---------------------------------
@@ -104,89 +120,111 @@ Header
 
 
 /*---------------------------------
-Header
+Scroller
 ---------------------------------*/
+.scroller { display: flex; border: 1px solid green; background: var(--white); position: relative; height: 20vh; align-items: center; }
+.scroller::before { content: ''; height: 100%; width: 20%; background: var(--color-6); position:absolute; left: 0; top:0; }
 
-.scroller{
-	display: flex;
-	border: 1px solid green;
-	background: var(--white);
-	position: relative;
-	height: 20vh;
-	align-items: center;
-}
+.scroller__text { border: 2px solid green; margin-left: var(--container-half-size); color: var(--black); display: flex; align-items: center; z-index: 10; }
+.scroller__text h2 { font-size: var(--fs-md); }
 
-.scroller::before{
-	content: '';
-	height: 100%;
-	width: 20%;
-	background: var(--color-6);
-	position:absolute;
-	left: 0;
-	top:0;
-}
+.scroller__media { overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); height: 80%; ; }
+.scroller__media__inner { display: flex; gap: 2rem; overflow: hidden; flex-wrap: nowrap; animation: scroll 20s linear infinite; width: max-content; height: 100%; ; }
 
-.scroller__text{
-	border: 2px solid green;
-	margin-left: var(--container-half-size);
-	color: var(--black);
-	display: flex;
-	align-items: center;
-	z-index: 10;
-}
-
-.scroller__text h2{
-	font-size: var(--fs-md);
-
-}
-
-.scroller__media{
-	overflow: hidden;
-	-webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-	mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-	height: 80%;;
-}
-
-.scroller__media__inner{
-	display: flex;
-	gap: 2rem;
-	overflow: hidden;
-	flex-wrap: nowrap;
-	animation: scroll 20s linear infinite;
-	width: max-content;
-	height: 100%;;
-
-
-}
-
-.scroller__media__item{
-
-	height: 100%;;
-	border: 1px solid red;
-	aspect-ratio: 5/3;
-
-}
-
-.scroller__media__item img{
-	object-fit: contain;
-	height: 100%;
-	width: 100%;
-}
-
-
-
-
-
-
+.scroller__media__item { height: 100%; ; border: 1px solid red; aspect-ratio: 5/3; }
+.scroller__media__item img { object-fit: contain; height: 100%; width: 100%; }
 
 @keyframes scroll {
+	to { transform: translateX(calc(-50% - 1rem)); }
+}
+
+
+/*---------------------------------
+Text
+---------------------------------*/
+.text{
+	margin-block: var(--space-1);
+
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: flex-start;
+	
+	gap: 1rem;
+}
+
+.text__head {
+	position: sticky;
+	top: var(--space-1);
+	border: 1px solid red;
+}
+
+.text__head h2{
+	font-size: calc(var(--fs-xxxl) * 1.8);
+	font-family: "Kanit", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	opacity: 0.1;
+	writing-mode: vertical-lr;
+
+}
+
+.text__head h2::before{
+	content: '/';
+}
+
+.text__body{
+	max-width: 120ch;
+}
+
+.text__body h3{
+	font-size: var(--fs-xl);
+	margin-block-end: 1rem;
+	font-weight: 200;
+}
+
+
+@keyframes scroll-reveal {
 	to{
-		transform: translateX(calc(-50% - 1rem));
+		background-position: 100% 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.text__head h2{
+		font-size: var(--fs-xxl);
+	}
+
+	.text__body h3{
+		font-size: var(--fs-md);
+		margin-block-end: 1rem;
+	}
+
+	.text__body p{
+		font-size: var(--fs-base);
 	}
 }
 
 
 
-
-
-
+html.lenis, html.lenis body {
+	height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+	overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+	pointer-events: none;
+  }
