@@ -150,3 +150,65 @@ Text
 	.text__body h3 { font-size: var(--fs-md); margin-block-end: 1rem; }
 	.text__body p { font-size: var(--fs-base); }
 }
+
+
+/*---------------------------------
+Services
+---------------------------------*/
+.services { margin-block: var(--space-1); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.services__head { position: sticky; top: 15vh; border: 1px solid red; width: 20%; }
+
+.services__head h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
+.services__head h2::before { content: '/'; }
+
+.services__body{width: 80%; border: 1px solid red;;}
+.services__body__title{ max-width: 80ch;}
+.services__body__title h3 { font-size: var(--fs-sm); margin-block-end: 0.4rem; }
+.services__body__title p { font-size: var(--fs-xl); margin-block-end: 1rem; font-weight: 200;}
+
+
+.services__body__items{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20vh 2rem;
+}
+
+.services__body__items .service{
+	flex-grow: 1;
+	flex-basis: 300px;
+	border: 1px solid yellow;
+}
+
+.services__body__items .service__media {
+	aspect-ratio: 1;
+}
+
+.services__body__items .service__media img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;;;
+}
+
+.service{
+	position: sticky;
+	top:15vh;
+	background: var(--color-1);
+}
+
+.service__text h4{
+	font-size: var(--fs-base);
+	margin-block-start: 1rem;
+	margin-block-end: 0.5rem;
+}
+
+.service__text p{
+	font-size: var(--fs-sm);
+	opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+	.services__head h2 { font-size: var(--fs-xxl); }
+	.services__body__title p { font-size: var(--fs-md); margin-block-end: 1rem; }
+
+}
