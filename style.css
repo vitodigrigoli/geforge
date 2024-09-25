@@ -115,13 +115,13 @@ Scroller
 .scroller__text h2 { font-size: var(--fs-base); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal;  }
 
 .scroller__media { overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); height: 80%; ; }
-.scroller__media__inner { display: flex; gap: 2rem; overflow: hidden; flex-wrap: nowrap; animation: scroll 20s linear infinite; width: max-content; height: 100%; z-index: -1;position: relative; }
+.scroller__media__inner { display: flex; gap: 5vw; overflow: hidden; flex-wrap: nowrap; animation: scroll 20s linear infinite; width: max-content; height: 100%; z-index: -1;position: relative; }
 
 .scroller__media__item { height: 100%; ; border: 1px solid red; aspect-ratio: 5/3; }
 .scroller__media__item img { object-fit: contain; height: 100%; width: 100%; }
 
 @keyframes scroll {
-	to { transform: translateX(calc(-50% - 1rem)); }
+	to { transform: translateX(calc(-50% - 2.5vw)); }
 }
 
 @media (max-width: 600px) {
