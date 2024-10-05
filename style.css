@@ -2,7 +2,7 @@
 General
 ---------------------------------*/
 :root{
-	--fs-sm: clamp(0.8rem, 0.15vi + 0.76rem, 1.13rem);
+	--fs-sm: clamp(0.85rem, 0.17vi + 0.8rem, 1.2rem);
 	--fs-base: clamp(1rem, 0.23vi + 0.94rem, 1.5rem);
 	--fs-md: clamp(1.25rem, 0.35vi + 1.16rem, 2rem);
 	--fs-lg: clamp(1.56rem, 0.51vi + 1.43rem, 2.67rem);
@@ -84,14 +84,14 @@ Button
 /*---------------------------------
 Header
 ---------------------------------*/
-.header { position: relative; height: 85vh; height: 85svh; border: 1px solid red; }
+.header { position: relative; height: 85vh; height: 85svh;  }
 
-.header__media { position: absolute; top: 0; right: 0; border: 1px  solid red; height: 100%; aspect-ratio: 9/16; }
+.header__media { position: absolute; top: 0; right: 0;  height: 100%; aspect-ratio: 9/16; }
 .header__media video { width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 
-.header__gradient { position: absolute; top: 0; right: 0; height: 100%; width: 70%; background: var(--gradient-1); border: 1px solid red; z-index: -2; ; }
+.header__gradient { position: absolute; top: 0; right: 0; height: 100%; width: 70%; background: var(--gradient-1);  z-index: -2; ; }
 
-.header__text { width: 86%; z-index: 10; text-wrap:balance; border: 1px solid red; text-align: right; position: absolute; top: 50%; right: 30%; transform: translate(-0%, -50%); }
+.header__text { width: 86%; z-index: 10; text-wrap:balance;  text-align: right; position: absolute; top: 50%; right: 30%; transform: translate(-0%, -50%); }
 .header__text h1 { font-size: var(--fs-xxl); font-weight: 400; }
 .header__text h1 span { color: var(--color-1); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; }
 .header__text h1 strong { font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; }
@@ -108,16 +108,16 @@ Header
 /*---------------------------------
 Scroller
 ---------------------------------*/
-.scroller { display: flex; border: 1px solid green; background: var(--white); position: relative; height: 15vh;height: 15svh; align-items: center; }
+.scroller { display: flex;  background: var(--white); position: relative; height: 15vh;height: 15svh; align-items: center; }
 .scroller::before { content: ''; height: 100%; width: 10%; background: var(--color-6); position:absolute; left: 0; top:0; z-index: 5;}
 
-.scroller__text { border: 2px solid green; margin-left: var(--container-half-size); color: var(--black); display: flex; align-items: center; z-index: 10; }
+.scroller__text { margin-left: var(--container-half-size); color: var(--black); display: flex; align-items: center; z-index: 10; }
 .scroller__text h2 { font-size: var(--fs-base); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal;  }
 
 .scroller__media { overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent); height: 80%; ; }
 .scroller__media__inner { display: flex; gap: 5vw; overflow: hidden; flex-wrap: nowrap; animation: scroll 20s linear infinite; width: max-content; height: 100%; z-index: -1;position: relative; }
 
-.scroller__media__item { height: 100%; ; border: 1px solid red; aspect-ratio: 5/3; }
+.scroller__media__item { height: 100%; ;  aspect-ratio: 5/3; }
 .scroller__media__item img { object-fit: contain; height: 100%; width: 100%; }
 
 @keyframes scroll {
@@ -134,7 +134,7 @@ Text
 ---------------------------------*/
 .text { margin-block: var(--space-1); display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: flex-start; gap: 1rem; }
 
-.text__head { position: sticky; top: 35vh; border: 1px solid red; }
+.text__head { position: sticky; top: 35vh;  }
 .text__head h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
 .text__head h2::before { content: '/'; }
 
@@ -155,60 +155,62 @@ Text
 /*---------------------------------
 Services
 ---------------------------------*/
-.services { margin-block: var(--space-1); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-.services__head { position: sticky; top: 15vh; border: 1px solid red; width: 20%; }
+.services { margin-block: var(--space-1); display: flex; justify-content: space-between; align-items: flex-start;  gap: 1rem; }
+.services__head { position: sticky; top: 12vh;  width: 20%; }
 
 .services__head h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
 .services__head h2::before { content: '/'; }
 
-.services__body{width: 80%; border: 1px solid red;;}
+.services__body{width: 80%;;}
 .services__body__title{ max-width: 80ch;}
 .services__body__title h3 { font-size: var(--fs-sm); margin-block-end: 0.4rem; }
 .services__body__title p { font-size: var(--fs-xl); margin-block-end: 1rem; font-weight: 200;}
 
+.services__body__items { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-1) 2rem; align-items: flex-start; }
 
-.services__body__items{
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 20vh 2rem;
-}
+.services__body__items .service { flex-grow: 1; flex-basis: 300px; position: sticky; top:15vh; background: var(--color-1);  }
 
-.services__body__items .service{
-	flex-grow: 1;
-	flex-basis: 300px;
-	border: 1px solid yellow;
-}
 
-.services__body__items .service__media {
-	aspect-ratio: 1;
-}
+.services__body__items .service__media { aspect-ratio: 1; }
+.services__body__items .service__media img { height: 100%; object-fit: cover; width: 100%; }
 
-.services__body__items .service__media img {
-	height: 100%;
-	object-fit: cover;
-	width: 100%;;;
-}
+.services__body__items .service__text h4 { font-size: var(--fs-md); margin-block-start: 1rem; margin-block-end: 0.5rem; }
+.services__body__items .service__text p { font-size: var(--fs-sm); opacity: 0.5; }
 
-.service{
-	position: sticky;
-	top:15vh;
-	background: var(--color-1);
-}
 
-.service__text h4{
-	font-size: var(--fs-base);
-	margin-block-start: 1rem;
-	margin-block-end: 0.5rem;
-}
 
-.service__text p{
-	font-size: var(--fs-sm);
-	opacity: 0.5;
-}
 
 @media (max-width: 600px) {
-	.services__head h2 { font-size: var(--fs-xxl); }
+ 	.services__head h2 { font-size: var(--fs-xxl); }
 	.services__body__title p { font-size: var(--fs-md); margin-block-end: 1rem; }
 
+	.services__body__items .service:nth-child(1){top:12vh;}
+	.services__body__items .service:nth-child(2){top:16vh;}
+	.services__body__items .service:nth-child(3){top:20vh;}
+	.services__body__items .service:nth-child(4){top:24vh;}
+	.services__body__items .service:nth-child(5){top:28vh;}
+	.services__body__items .service:nth-child(6){top:32vh;}
+}
+
+
+/*---------------------------------
+FAQ
+---------------------------------*/
+.faqs { margin-block: var(--space-1); display: flex; justify-content: space-between; align-items: flex-start;  gap: 1rem; flex-direction: row-reverse; }
+.faqs__head { position: sticky; top: 12vh;  width: 20%; display: flex; justify-content: end; }
+
+.faqs__head h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
+.faqs__head h2::before { content: '/'; }
+
+.faqs__body{width: 80%; display: flex; flex-direction: column; gap: 2rem;}
+
+.faqs__body__item{cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem 0;}
+.faqs__body__item summary{ font-size: var(--fs-lg); font-weight: 600; font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; opacity: 0.5; transition: 0.4s;}
+.faqs__body__item summary:hover { opacity: 1;}
+.faqs__body__item p{margin-block-start: 1rem; opacity: 0.5; font-size: var(--fs-base);;}
+
+
+@media (max-width: 600px) {
+	.faqs__head h2 {  font-size: var(--fs-xxl); }
+	.faqs__body__item p{font-size: var(--fs-sm);}
 }

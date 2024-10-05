@@ -17,7 +17,6 @@ splitTypes.forEach( (char, i) => {
 		scrollTrigger: {
 			trigger: char,
 			scrub: true,
-			markers: true,
 			start: 'top 35%',
 			end: 'bottom 35%'
 		},
@@ -27,11 +26,10 @@ splitTypes.forEach( (char, i) => {
 
 	})
 })
-
+/*
 const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
-  console.log(e)
 })
 
 lenis.on('scroll', ScrollTrigger.update)
@@ -41,3 +39,4 @@ gsap.ticker.add((time)=>{
 })
 
 gsap.ticker.lagSmoothing(0)
+*/
