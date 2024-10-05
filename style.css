@@ -36,7 +36,7 @@ General
 body { font-family: "Source Sans 3", sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: normal; background-color: var(--color-1); color: var(--white) }
 img, video { display: block; }
 h1 { margin-block-end: 1rem; }
-p { margin-block-end: 1rem; font-size: var(--fs-md); line-height: 1.8; }
+p { margin-block-end: 1rem; font-size: var(--fs-md); line-height: 1.8; text-wrap: pretty; }
 
 
 /*---------------------------------
@@ -91,7 +91,7 @@ Header
 
 .header__gradient { position: absolute; top: 0; right: 0; height: 100%; width: 70%; background: var(--gradient-1);  z-index: -2; ; }
 
-.header__text { width: 86%; z-index: 10; text-wrap:balance;  text-align: right; position: absolute; top: 50%; right: 30%; transform: translate(-0%, -50%); }
+.header__text { width: 86%; z-index: 10; text-wrap:balance;  text-align: right; position: absolute; top: 50%; right: 30%; transform: translate(-0%, -50%); max-width: 1200px;}
 .header__text h1 { font-size: var(--fs-xxl); font-weight: 400; }
 .header__text h1 span { color: var(--color-1); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; }
 .header__text h1 strong { font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; }
@@ -134,11 +134,11 @@ Text
 ---------------------------------*/
 .text { margin-block: var(--space-1); display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: flex-start; gap: 1rem; }
 
-.text__head { position: sticky; top: 35vh;  }
+.text__head { position: sticky; top: 35vh; width: 20%; display: flex; justify-content: flex-end;  }
 .text__head h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
 .text__head h2::before { content: '/'; }
 
-.text__body { max-width: 120ch; }
+.text__body { max-width: 200ch; width: 80%; }
 .text__body h3 { font-size: var(--fs-xl); margin-block-end: 1rem; font-weight: 200; }
 
 @keyframes scroll-reveal {
@@ -172,7 +172,7 @@ Services
 
 
 .services__body__items .service__media { aspect-ratio: 1; }
-.services__body__items .service__media img { height: 100%; object-fit: cover; width: 100%; }
+.services__body__items .service__media img { height: 100%; object-fit: cover; width: 100%; border-radius: var(--border--radius); }
 
 .services__body__items .service__text h4 { font-size: var(--fs-md); margin-block-start: 1rem; margin-block-end: 0.5rem; }
 .services__body__items .service__text p { font-size: var(--fs-sm); opacity: 0.5; }
@@ -206,8 +206,8 @@ FAQ
 
 .faqs__body__item{cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 1rem 0;}
 .faqs__body__item summary{ font-size: var(--fs-lg); font-weight: 600; font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; opacity: 0.5; transition: 0.4s;}
-.faqs__body__item summary:hover { opacity: 1;}
-.faqs__body__item p{margin-block-start: 1rem; opacity: 0.5; font-size: var(--fs-base);;}
+.faqs__body__item summary:hover, .faqs__body__item[open] summary{ opacity: 1;}
+.faqs__body__item p{margin-block-start: 1rem; opacity: 0.5; font-size: var(--fs-base); margin-inline-start: 4ch; text-wrap: pretty;}
 
 
 @media (max-width: 600px) {
