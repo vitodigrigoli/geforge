@@ -44,6 +44,18 @@ Helpers
 ---------------------------------*/
 .container { width: var(--container-size); margin-left: auto; margin-right: auto; }
 
+.container--sticky{margin-block: var(--space-1); display: flex; justify-content: space-between; align-items: flex-start;  gap: 1rem;}
+
+
+
+.section { margin: var(--space-1) auto; display: flex; justify-content: space-between; align-items: flex-start;  width: var(--container-size); }
+.section--reverse { flex-direction: row-reverse; }
+
+.section__header{ position: sticky; top: 12vh;  width: 20%; display: flex; justify-content: end; border: 1px solid red;}
+.section__header h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
+.section__header h2::before { content: '/'; }
+
+.section__content{width: 80%; border: 1px solid blue;;}
 
 
 /*---------------------------------
@@ -132,14 +144,8 @@ Scroller
 /*---------------------------------
 Text
 ---------------------------------*/
-.text { margin-block: var(--space-1); display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-
-.text__head { position: sticky; top: 35vh; width: 20%; display: flex; justify-content: flex-end;  }
-.text__head h2 { font-size: calc(var(--fs-xxxl) * 1.8); font-family: "Kanit", sans-serif; font-weight: 600; font-style: normal; text-transform: uppercase; letter-spacing: 2px; opacity: 0.1; writing-mode: vertical-lr; }
-.text__head h2::before { content: '/'; }
-
-.text__body { max-width: 200ch; width: 80%; }
-.text__body h3 { font-size: var(--fs-xl); margin-block-end: 1rem; font-weight: 200; }
+.text__content{max-width: 200ch;}
+.text__content h3 { font-size: var(--fs-xl); margin-block-end: 1rem; font-weight: 200; }
 
 @keyframes scroll-reveal {
 	to { background-position: 100% 100%; }

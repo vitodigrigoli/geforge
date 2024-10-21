@@ -9,7 +9,7 @@ scrollerContent.forEach( item  =>{
 )
 
 gsap.registerPlugin(ScrollTrigger)
-const splitTypes =  document.querySelectorAll('.text__body > *')
+const splitTypes =  document.querySelectorAll('.text__content > *')
 splitTypes.forEach( (char, i) => {
 	const text = new SplitType(char, {types:'chars, words'})
 	
@@ -26,7 +26,7 @@ splitTypes.forEach( (char, i) => {
 
 	})
 })
-/*
+
 const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
@@ -39,4 +39,3 @@ gsap.ticker.add((time)=>{
 })
 
 gsap.ticker.lagSmoothing(0)
-*/
